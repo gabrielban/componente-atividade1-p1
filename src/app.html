@@ -1,0 +1,48 @@
+<template>
+  <lightning-card>
+    <div class="slds-m-around_medium">
+      <h1 class="slds-text-heading_large" style="text-align:center">
+        Minha empresa
+      </h1><br/>
+      <p>Cod: {cod}</p><br/>
+      <p>Nome: {name}</p><br/>
+      <p>Telefone: {phone}</p><br/>
+      <p>Email: {email}</p><br/>
+      <p>Classificação: {rating}</p><br/>
+
+      <lightning-button variant="brand" label="Trocar Info" title="Alterar Visible" onclick={alteraValor}
+        class="slds-m-left_x-small"></lightning-button>
+
+    </div><br><br>
+
+    <div class="slds-m-around_medium">
+
+      <h1 class="slds-text-heading_medium">
+        Quem é esse Pokemon?
+      </h1>
+
+      <img src={imagem} onclick={alteraPkm}>
+
+    </div><br><br>
+
+    <div class="slds-m-around_medium">
+
+      <h1 class="slds-text-heading_medium">
+        Meu Top 5 Musicas!
+      </h1><br>
+      <template for:each={minhaMusicaShow} for:item="mus">
+        <p key={mus.cod}>
+          Nome: {mus.nome}<br>
+            Artista:  {mus.artista}<br>
+            Album:    {mus.album}<br><br>
+
+        </p>
+      </template>
+    </div>
+    <div class="slds-m-around_medium">
+      <h1 class="slds-text-heading_medium"> Oportunidades </h1><br>
+      <c-oportunidade nomeop="Secreta" nomecont="Yakuza" valor="50.000.000,00" dtfecha="20/12/22"></c-oportunidade>
+
+    </div>
+  </lightning-card>
+</template>
